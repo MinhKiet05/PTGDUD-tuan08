@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import styles from './searchPage.module.css';
-
+import noResultImg from'../../../public/visily-image-105.webp'
 const SearchPage = () => {
   // Lấy dữ liệu từ URL
   const [searchParams] = useSearchParams();
@@ -132,7 +132,7 @@ const SearchPage = () => {
               ? `Sorry, no results were found for “${query}”` 
               : "Please enter a search term"}
           </h2>
-          <img src="/empty-box-illustration.png" alt="No results" className={styles.emptyImage} />
+          <img src={noResultImg} alt="No results" className={styles.emptyImage} />
           <p>We have all your Independence Day sweets covered.</p>
           
           <div className={styles.tagsContainer}>
