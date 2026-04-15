@@ -1,0 +1,320 @@
+.pageWrapper {
+  font-family: 'Inter', sans-serif;
+  color: #111827;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 16px 40px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.logoGroup {
+  margin-right: 40px;
+}
+
+.logoIcon {
+  color: #f24e87;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+  padding: 10px 16px;
+  width: 300px;
+}
+
+.searchBar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  margin-left: 8px;
+  width: 100%;
+  color: #374151;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  margin-left: auto;
+  color: #4b5563;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: 40px;
+}
+
+.recipeBoxBtn {
+  background-color: #fce7f0;
+  color: #f24e87;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+}
+
+/* MAIN CONTENT */
+.mainContent {
+  position: relative; /* Quan trọng: Để .container tính tọa độ absolute dựa trên thẻ main này */
+  flex: 1;
+  min-height: 950px; /* Đảm bảo main đủ cao để chứa bộ lọc 825px */
+  background-color: #fafafb;
+}
+
+/* SIDEBAR FILTER - ĐÚNG YÊU CẦU */
+.container {
+  position: absolute; 
+  top: 68px; 
+  left: 124px; 
+  width: 336px; 
+  height: 825px; 
+  background: #FFFFFFFF; 
+  border-radius: 8px; 
+  box-shadow: 0px 0px 1px #171a1f26, 0px 0px 2px #171a1f33; 
+  /* Bổ sung thêm để dàn layout bên trong */
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.filterTitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filterSection {
+  margin-bottom: 24px;
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 16px;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.checkboxGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.checkboxGrid label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+/* Custom checkbox color */
+input[type="checkbox"] {
+  accent-color: #f24e87;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.timeSlider {
+  padding: 0 10px;
+}
+
+.timeLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.slider {
+  width: 100%;
+  accent-color: #f24e87;
+}
+
+.ratingList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.stars {
+  font-size: 18px;
+}
+
+.starFilled {
+  color: #fbbf24;
+}
+
+.starEmpty {
+  color: #e5e7eb;
+}
+
+.applyBtn {
+  margin-top: auto; /* Đẩy nút xuống dưới cùng của container */
+  background-color: #f24e87;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* EMPTY STATE */
+.emptyState {
+  /* Vì sidebar absolute chiếm 124px + 336px = 460px. Ta đẩy nội dung qua bên phải */
+  margin-left: 500px; 
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.emptyState h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.emptyImage {
+  width: 200px;
+  margin-bottom: 24px;
+}
+
+.emptyState p {
+  color: #4b5563;
+  margin-bottom: 24px;
+}
+
+.tagsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.tag {
+  background-color: #fce7f0; /* Hoặc màu tùy biến theo ảnh */
+  color: #f24e87;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.tag:nth-child(2) { background-color: #e0e7ff; color: #4f46e5; }
+.tag:nth-child(3) { background-color: #fce7f0; color: #db2777; }
+.tag:nth-child(4) { background-color: #e0f2fe; color: #0284c7; }
+
+/* FOOTER */
+.footer {
+  background-color: #1f2937;
+  color: white;
+  padding: 60px 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer h4 {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.footer p {
+  font-size: 14px;
+  color: #d1d5db;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  max-width: 300px;
+}
+
+.subscribeBox {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.subscribeBox input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.subscribeBox button {
+  background-color: #f24e87;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.footerBranding {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.footerLogo {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.footerColLinks ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 14px;
+  color: #d1d5db;
+}
+
+.shopTitle {
+  margin-top: 32px;
+}

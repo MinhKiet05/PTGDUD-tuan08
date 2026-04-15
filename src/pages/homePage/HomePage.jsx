@@ -1,13 +1,27 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './HomePage.module.css';
 import ModalHomePage from '../../components/modalHomePage/ModalHomePage';
 import ModalLogin from '../../components/modalLogin/ModalLogin';
+
 const HomePage = () => {
-    // Mặc định bật modal khi mới vào trang (giống ảnh)
     const [isModalOpen, setIsModalOpen] = useState(true);
     const [isLoginOpen, setIsLoginOpen] = useState(false);
+    
+    // Thêm state để quản lý ô tìm kiếm
+    const [searchTerm, setSearchTerm] = useState('');
+    const navigate = useNavigate();
+
     const handleCloseModal = () => {
         setIsModalOpen(false);
+    };
+
+    // Hàm xử lý khi nhấn Enter
+    const handleSearch = (e) => {
+        if (e.key === 'Enter' && searchTerm.trim()) {
+            // Chuyển hướng và truyền từ khóa lên URL
+            navigate(`/search?name=${encodeURIComponent(searchTerm)}`);
+        }
     };
 
     return (
@@ -19,7 +33,13 @@ const HomePage = () => {
                 </div>
 
                 <div className={styles.searchBar}>
-                    <input type="text" placeholder="What would you like to cook?" />
+                    <input 
+                        type="text" 
+                        placeholder="What would you like to cook?" 
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        onKeyDown={handleSearch}
+                    />
                 </div>
 
                 <ul className={styles.navLinks}>
