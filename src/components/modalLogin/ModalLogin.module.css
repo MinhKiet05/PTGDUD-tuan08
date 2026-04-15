@@ -1,0 +1,195 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Lớp nền đen mờ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Yêu cầu đặc biệt: Fix cứng width và height */
+.modalContainer {
+  width: 1139px;
+  height: 624px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #374151;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* --- LEFT PANEL --- */
+.leftPanel {
+  flex: 1; /* Chiếm 50% */
+  background-image: url('/visily-image-72.png'); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.quoteText {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  max-width: 80%;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  line-height: 1.4;
+}
+
+/* --- RIGHT PANEL --- */
+.rightPanel {
+  flex: 1; /* Chiếm 50% */
+  padding: 60px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formTitle {
+  font-size: 32px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.formSubtitle {
+  font-size: 16px;
+  color: #4b5563;
+  margin-bottom: 24px;
+}
+
+.inputGroup {
+  margin-bottom: 16px;
+}
+
+.emailInput {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #f9fafb;
+  outline: none;
+  transition: border 0.2s;
+  box-sizing: border-box;
+}
+
+.emailInput:focus {
+  border-color: #f24e87;
+}
+
+.continueBtn {
+  width: 100%;
+  padding: 16px;
+  background-color: #f24e87;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.divider span {
+  padding: 0 16px;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.termsText {
+  font-size: 12px;
+  color: #6b7280;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.termsText strong {
+  color: #374151;
+  cursor: pointer;
+}
+
+/* Các nút Social */
+.socialGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.socialBtn {
+  width: 100%;
+  padding: 14px;
+  background-color: #f3f4f6;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.socialBtn:hover {
+  background-color: #e5e7eb;
+}
+
+.socialIconGoogle {
+  position: absolute;
+  left: 20px;
+  color: #ea4335;
+  font-weight: bold;
+}
+
+.socialIconFb {
+  position: absolute;
+  left: 20px;
+  color: #1877f2;
+  font-weight: bold;
+}
+
+.socialIconApple {
+  position: absolute;
+  left: 20px;
+  color: #000000;
+  font-size: 18px;
+}
