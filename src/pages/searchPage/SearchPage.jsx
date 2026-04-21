@@ -1,24 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useSearchParams, useNavigate, Link } from 'react-router-dom';
 import styles from './searchPage.module.css';
-import noResultImg from '../../../public/visily-image-105.webp'
-import { Link } from 'react-router-dom';
-import Footer from '../../components/footer/Footer';
+import Footer from '../../components/footer/Footer'; // Nhớ check lại đường dẫn này
+import Card from '../../components/card/Card'; // Import component Card bạn đã tạo ở bài trước
+
+// Dữ liệu giả lập cho 9 thẻ kết quả
+const mockSaladRecipes = [
+  { id: 1, title: 'Cucumber salad, cherry tomatoes', time: '32 minutes',image: '/visily-image-121.webp'},
+  { id: 2, title: 'Italian-style tomato salad', time: '32 minutes', image: '/visily-image-122.webp' },
+  { id: 3, title: 'Potato Salad', time: '32 minutes', image: '/visily-image-123.webp' },
+  { id: 4, title: 'Salad with cabbage and shrimp', time: '32 minutes', image: '/visily-image-121.webp' },
+  { id: 5, title: 'Five-color salad', time: '32 minutes', image: '/visily-image-122.webp' },
+  { id: 6, title: 'Corn Salad', time: '32 minutes', image: '/visily-image-123.webp' },
+  { id: 7, title: 'Salad with cabbage and shrimp', time: '32 minutes', image: '/visily-image-121.webp' },
+  { id: 8, title: 'Lotus delight salad', time: '32 minutes', image: '/visily-image-122.webp' },
+  { id: 9, title: 'Avocado Salad', time: '32 minutes', image: '/visily-image-123.webp' },
+];
+
 const SearchPage = () => {
-  // Lấy dữ liệu từ URL
   const [searchParams] = useSearchParams();
   const query = searchParams.get('name') || ''; 
   const navigate = useNavigate();
 
-  // State cho thanh search trên chính trang SearchPage
   const [localSearch, setLocalSearch] = useState(query);
 
-  // Cập nhật lại thanh search nếu URL thay đổi
   useEffect(() => {
     setLocalSearch(query);
   }, [query]);
 
-  // Cho phép tìm kiếm tiếp từ trang này
   const handleSearch = (e) => {
     if (e.key === 'Enter' && localSearch.trim()) {
       navigate(`/search?name=${encodeURIComponent(localSearch)}`);
@@ -54,7 +63,7 @@ const SearchPage = () => {
           <li>About Us</li>
         </ul>
 
-        <Link to="/recipe-box">
+        <Link to="/recipe-box" style={{ textDecoration: 'none' }}>
           <div className={styles.headerActions}>
             <button className={styles.recipeBoxBtn}>
               <span className={styles.checkIcon}>☑</span> Your Recipe Box
@@ -67,13 +76,12 @@ const SearchPage = () => {
       {/* MAIN CONTENT */}
       <main className={styles.mainContent}>
         
-        {/* SIDEBAR FILTER */}
+        {/* SIDEBAR FILTER (Giữ nguyên cấu trúc tuyệt đối absolute như cũ) */}
         <aside className={styles.container}>
           <h3 className={styles.filterTitle}>
             <span className={styles.menuIcon}>☰</span> FILTERS
           </h3>
 
-          {/* Type Filter */}
           <div className={styles.filterSection}>
             <div className={styles.sectionHeader}>
               <h4>Type</h4>
@@ -91,7 +99,6 @@ const SearchPage = () => {
             </div>
           </div>
 
-          {/* Time Filter */}
           <div className={styles.filterSection}>
             <div className={styles.sectionHeader}>
               <h4>Time</h4>
@@ -106,7 +113,6 @@ const SearchPage = () => {
             </div>
           </div>
 
-          {/* Rating Filter */}
           <div className={styles.filterSection}>
             <div className={styles.sectionHeader}>
               <h4>Rating</h4>
@@ -129,28 +135,47 @@ const SearchPage = () => {
           <button className={styles.applyBtn}>Apply</button>
         </aside>
 
-        {/* EMPTY STATE RESULTS - HIỂN THỊ TỪ KHÓA ĐỘNG */}
-        <div className={styles.emptyState}>
-          <h2>
-            {query 
-              ? `Sorry, no results were found for “${query}”` 
-              : "Please enter a search term"}
-          </h2>
-          <img src={noResultImg} alt="No results" className={styles.emptyImage} />
-          <p>We have all your Independence Day sweets covered.</p>
-          
-          <div className={styles.tagsContainer}>
-            <span className={styles.tag}>Sweet Cake</span>
-            <span className={styles.tag}>Black Cake</span>
-            <span className={styles.tag}>Pozole Verde</span>
-            <span className={styles.tag}>Healthy food</span>
+        {/* RESULTS SECTION (Thay thế cho emptyState cũ) */}
+        <div className={styles.resultsContainer}>
+          {/* Header của phần kết quả */}
+          <div className={styles.resultsHeader}>
+            <h1 className={styles.resultsTitle}>Salad (32)</h1>
+            <select className={styles.sortSelect}>
+              <option value="az">A-Z</option>
+              <option value="za">Z-A</option>
+              <option value="newest">Newest</option>
+            </select>
+          </div>
+
+          {/* Grid hiển thị danh sách Card */}
+          <div className={styles.recipeGrid}>
+            {mockSaladRecipes.map((recipe) => (
+              <Card 
+                key={recipe.id}
+                image={recipe.image}
+                title={recipe.title}
+                time={recipe.time}
+              />
+            ))}
+          </div>
+
+          {/* Phân trang */}
+          <div className={styles.pagination}>
+            <button className={styles.pageBtn}>1</button>
+            <button className={styles.pageBtn}>2</button>
+            <button className={styles.pageBtn}>3</button>
+            <button className={styles.pageBtn}>4</button>
+            <span className={styles.pageDots}>...</span>
+            <button className={styles.pageBtn}>10</button>
+            <button className={styles.pageBtn}>11</button>
+            <button className={styles.pageArrow}>&gt;</button>
           </div>
         </div>
 
       </main>
 
       {/* FOOTER */}
-              <Footer></Footer>
+      <Footer />
     </div>
   );
 };
