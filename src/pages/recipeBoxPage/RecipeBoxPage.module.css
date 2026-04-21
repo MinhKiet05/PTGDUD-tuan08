@@ -1,0 +1,186 @@
+.pageWrapper {
+  font-family: 'Inter', sans-serif;
+  color: #111827;
+  background-color: #fafafb;
+  min-height: 100vh;
+}
+
+/* HEADER BẢN RÚT GỌN CHỮA CHÁY */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #f3f4f6;
+}
+.logo { font-size: 24px; font-weight: bold; color: #f24e87; }
+.searchBar { background: #f3f4f6; padding: 10px 16px; border-radius: 8px; display: flex; align-items: center; }
+.searchBar input { border: none; background: transparent; outline: none; margin-left: 8px; }
+.navLinks { display: flex; gap: 24px; list-style: none; font-size: 14px; color: #4b5563; }
+.headerRight { display: flex; align-items: center; gap: 16px; }
+.recipeBoxBtn { background: #fce7f0; color: #f24e87; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+.avatarMini { width: 36px; height: 36px; border-radius: 50%; background: #ddd; }
+
+/* MAIN CONTAINER GIỮA TRANG */
+.mainContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* BREADCRUMB */
+.breadcrumb {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 32px;
+}
+.currentCrumb {
+  color: #f24e87;
+  font-weight: 500;
+}
+
+/* PROFILE SECTION */
+.profileSection {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 48px;
+  align-items: flex-start;
+}
+
+.profileAvatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background-color: #e5e7eb; /* Placeholder color */
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileName {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0 0 16px 0;
+}
+
+.profileBio {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 800px;
+}
+
+.profileActions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.subCount {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f24e87;
+}
+
+.shareBtn {
+  background-color: #fce7f0;
+  color: #f24e87;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* TABS CONTAINER */
+.tabsContainer {
+  display: flex;
+  gap: 40px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 32px;
+}
+
+.tabBtn {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #6b7280;
+  padding-bottom: 16px;
+  cursor: pointer;
+  position: relative;
+}
+
+.tabBtn.activeTab {
+  color: #111827;
+}
+
+.tabBtn.activeTab::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #f24e87;
+  border-radius: 3px 3px 0 0;
+}
+
+/* RECIPE GRID - 4 Cột */
+.recipeGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 80px;
+}
+
+.pageBtn, .pageArrow {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  color: #4b5563;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pageBtn:hover, .pageArrow:hover {
+  border-color: #d1d5db;
+  background-color: #f9fafb;
+}
+
+.pageBtn.activePage {
+  background-color: #f24e87;
+  color: white;
+  border-color: #f24e87;
+}
+
+.pageDots {
+  color: #6b7280;
+  padding: 0 8px;
+}
+

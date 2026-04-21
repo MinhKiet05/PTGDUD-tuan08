@@ -1,0 +1,90 @@
+.cardContainer {
+  font-family: 'Inter', sans-serif;
+  width: 280px; /* Có thể điều chỉnh tùy theo layout tổng */
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #f3f4f6;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.cardContainer:hover {
+  transform: translateY(-4px); /* Hiệu ứng nhẹ khi hover thẻ */
+}
+
+/* Container chứa ảnh có tỷ lệ cố định */
+.imageWrapper {
+  width: 100%;
+  height: 200px;
+  background-color: #f9fafb;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 16px 20px;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  line-height: 1.4;
+  /* Nếu tên dài quá 2 dòng sẽ hiển thị dấu ... */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Nút Bookmark tròn */
+.bookmarkBtn {
+  flex-shrink: 0; /* Tránh bị bóp méo khi tên quá dài */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid #f24e87;
+  background-color: transparent;
+  color: #f24e87;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Trạng thái khi nút được click */
+.bookmarkBtn.active {
+  background-color: #f24e87;
+  color: #ffffff;
+}
+
+.bookmarkIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Tag hiển thị thời gian */
+.timeTag {
+  display: inline-block;
+  background-color: #fce7f0;
+  color: #f24e87;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
