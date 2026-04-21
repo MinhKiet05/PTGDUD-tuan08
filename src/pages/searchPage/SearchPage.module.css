@@ -1,3 +1,6 @@
+/* =========================================
+   GENERAL PAGE LAYOUT
+   ========================================= */
 .pageWrapper {
   font-family: 'Inter', sans-serif;
   color: #111827;
@@ -6,7 +9,9 @@
   flex-direction: column;
 }
 
-/* HEADER */
+/* =========================================
+   HEADER
+   ========================================= */
 .header {
   display: flex;
   align-items: center;
@@ -80,25 +85,28 @@
   background-color: #e5e7eb;
 }
 
-/* MAIN CONTENT */
+/* =========================================
+   MAIN CONTENT (FLEXBOX LAYOUT)
+   ========================================= */
 .mainContent {
-  position: relative; /* Quan trọng: Để .container tính tọa độ absolute dựa trên thẻ main này */
   flex: 1;
-  min-height: 950px; /* Đảm bảo main đủ cao để chứa bộ lọc 825px */
   background-color: #fafafb;
+  display: flex; 
+  align-items: flex-start; /* Giữ các phần tử ở trên cùng, không bị kéo giãn */
+  padding: 40px 80px; 
+  gap: 40px; /* Khoảng cách giữa Sidebar và Results */
 }
 
-/* SIDEBAR FILTER - ĐÚNG YÊU CẦU */
+/* =========================================
+   SIDEBAR FILTER
+   ========================================= */
 .container {
-  position: absolute; 
-  top: 68px; 
-  left: 124px; 
   width: 336px; 
+  flex-shrink: 0; /* Quan trọng: Ngăn không cho sidebar bị bóp méo khi màn hình nhỏ */
   height: 825px; 
-  background: #FFFFFFFF; 
+  background: #ffffff; 
   border-radius: 8px; 
   box-shadow: 0px 0px 1px #171a1f26, 0px 0px 2px #171a1f33; 
-  /* Bổ sung thêm để dàn layout bên trong */
   padding: 24px;
   box-sizing: border-box;
   display: flex;
@@ -143,7 +151,6 @@
   cursor: pointer;
 }
 
-/* Custom checkbox color */
 input[type="checkbox"] {
   accent-color: #f24e87;
   width: 16px;
@@ -194,7 +201,7 @@ input[type="checkbox"] {
 }
 
 .applyBtn {
-  margin-top: auto; /* Đẩy nút xuống dưới cùng của container */
+  margin-top: auto; /* Tự động đẩy nút Apply xuống dưới cùng */
   background-color: #f24e87;
   color: white;
   border: none;
@@ -205,46 +212,85 @@ input[type="checkbox"] {
   width: 100%;
 }
 
-/* EMPTY STATE */
-.emptyState {
-  /* Vì sidebar absolute chiếm 124px + 336px = 460px. Ta đẩy nội dung qua bên phải */
-  margin-left: 500px; 
-  padding: 80px 40px;
-  text-align: center;
+/* =========================================
+   RESULTS CONTAINER (Bên phải)
+   ========================================= */
+.resultsContainer {
+  flex: 1; /* Tự động chiếm toàn bộ không gian còn lại bên phải */
+  max-width: 1000px;
 }
 
-.emptyState h2 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 40px;
-}
-
-.emptyImage {
-  width: 200px;
-  margin-bottom: 24px;
-}
-
-.emptyState p {
-  color: #4b5563;
-  margin-bottom: 24px;
-}
-
-.tagsContainer {
+.resultsHeader {
   display: flex;
-  justify-content: center;
-  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
 }
 
-.tag {
-  background-color: #fce7f0; /* Hoặc màu tùy biến theo ảnh */
-  color: #f24e87;
-  padding: 8px 16px;
-  border-radius: 20px;
+.resultsTitle {
+  font-size: 32px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
+
+.sortSelect {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background-color: white;
+  color: #4b5563;
   font-size: 14px;
+  outline: none;
   cursor: pointer;
 }
-.tag:nth-child(2) { background-color: #e0e7ff; color: #4f46e5; }
-.tag:nth-child(3) { background-color: #fce7f0; color: #db2777; }
-.tag:nth-child(4) { background-color: #e0f2fe; color: #0284c7; }
 
-/* FOOTER */
+/* Lưới hiển thị Card - CHIA 3 CỘT */
+.recipeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+/* =========================================
+   PAGINATION (Phân trang dưới cùng)
+   ========================================= */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.pageBtn, .pageArrow {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  color: #4b5563;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* Đánh dấu trang 1 (hoặc active) bằng viền màu hồng theo ảnh */
+.pageBtn:first-child {
+  border: 2px solid #f24e87;
+  color: #f24e87;
+}
+
+.pageBtn:hover, .pageArrow:hover {
+  border-color: #d1d5db;
+  background-color: #f9fafb;
+}
+
+.pageDots {
+  color: #6b7280;
+  padding: 0 8px;
+}
