@@ -9,7 +9,7 @@
 
 
 .heroSection {
-  flex: 1;
+  height: 600px;
   background-image: url('https://vanhoarestaurant.com/wp-content/uploads/2024/04/hinh-anh-nha-hang-van-van-hoa-restaurant-1.jpg'); /* Thay bằng ảnh nền thực tế */
   background-size: cover;
   background-position: center;
@@ -17,6 +17,7 @@
   align-items: center;
   padding-left: 100px;
   position: relative;
+  
 }
 
 .recipeCard {
