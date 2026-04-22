@@ -1,0 +1,370 @@
+/* Layout Tổng Thể */
+.dashboardContainer {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: #F8FAFC; /* Màu nền sáng xám nhạt */
+  color: #0F172A; /* Màu text đen slate */
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background-color: #FFFFFF;
+  border-right: 1px solid #E2E8F0;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+  color: #2563EB; /* Xanh dương chuẩn Logo */
+  margin-bottom: 40px;
+}
+
+.navMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #64748B;
+  font-weight: 500;
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-size: 15px;
+}
+
+.navIcon {
+  width: 20px;
+  margin-right: 12px;
+  font-size: 16px;
+}
+
+.navItem:hover {
+  background-color: #F1F5F9;
+  color: #0F172A;
+}
+
+.navItem.active {
+  background-color: #EFF6FF;
+  color: #2563EB; /* Xanh dương khi Active */
+  font-weight: 600;
+}
+
+.upgradeBox {
+  background-color: #F8FAFC;
+  padding: 16px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 16px;
+  border: 1px solid #E2E8F0;
+}
+
+.upgradeText {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #0F172A;
+}
+
+.tryNowBtn {
+  background-color: #2563EB;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.tryNowBtn:hover {
+  background-color: #1D4ED8;
+}
+
+.madeWith {
+  text-align: center;
+  font-size: 12px;
+  color: #94A3B8;
+}
+
+/* MAIN CONTENT */
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* TOP HEADER */
+.topHeader {
+  height: 72px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  background-color: #F1F5F9;
+  padding: 10px 16px;
+  border-radius: 20px;
+  width: 320px;
+}
+
+.searchIcon {
+  color: #94A3B8;
+  font-size: 14px;
+}
+
+.searchBar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  margin-left: 10px;
+  width: 100%;
+  color: #0F172A;
+  font-size: 14px;
+}
+
+.headerIcons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.helpIcon {
+  cursor: pointer;
+  color: #64748B;
+  font-size: 20px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  background-color: #E2E8F0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+}
+
+/* PAGE CONTENT */
+.pageContent {
+  padding: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.pageTitle {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #0F172A;
+}
+
+/* STATS GRID */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.statCard {
+  background-color: #FFFFFF;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  border: 1px solid #E2E8F0;
+  position: relative;
+}
+
+.statHeader {
+  font-size: 14px;
+  color: #64748B;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.statValue {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 16px;
+}
+
+.statChange {
+  font-size: 13px;
+  color: #64748B;
+  margin-bottom: 12px;
+}
+
+.positive {
+  color: #10B981; /* Xanh lá cây chuẩn */
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.detailLink {
+  font-size: 13px;
+  color: #2563EB;
+  text-decoration: none;
+  font-weight: 500;
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+}
+
+.detailLink:hover {
+  text-decoration: underline;
+}
+
+/* TABLE SECTION */
+.tableContainer {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  border: 1px solid #E2E8F0;
+  padding: 24px;
+}
+
+.tableToolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.resultsCount {
+  font-weight: 600;
+  color: #0F172A;
+}
+
+.tableActions {
+  display: flex;
+  gap: 12px;
+}
+
+.actionBtn {
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  color: #334155;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.actionBtn:hover {
+  background-color: #F8FAFC;
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 32px;
+}
+
+.dataTable th {
+  text-align: left;
+  padding: 16px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748B;
+  border-bottom: 1px solid #E2E8F0;
+  text-transform: uppercase;
+}
+
+.dataTable td {
+  padding: 16px 12px;
+  font-size: 14px;
+  color: #334155;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.fw500 {
+  font-weight: 500;
+  color: #0F172A;
+}
+
+/* BADGES MÀU CHUẨN XÁC */
+.statusBadge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.new {
+  background-color: #DBEAFE; /* Nền xanh dương nhạt */
+  color: #1D4ED8; /* Chữ xanh dương đậm */
+}
+
+.inprogress {
+  background-color: #FEF3C7; /* Nền cam/vàng nhạt */
+  color: #B45309; /* Chữ cam/vàng đậm */
+}
+
+.completed {
+  background-color: #DCFCE7; /* Nền xanh lá nhạt */
+  color: #15803D; /* Chữ xanh lá đậm */
+}
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+
+.pageBtn {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.pageBtn:hover {
+  background-color: #F1F5F9;
+}
+
+.pageBtn.activePage {
+  background-color: #2563EB;
+  color: white;
+  border-color: #2563EB;
+}
+
+.pageDots {
+  color: #94A3B8;
+  padding: 0 4px;
+}

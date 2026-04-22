@@ -4,6 +4,7 @@ import HomePage from './pages/homePage/HomePage';
 import SearchPage from './pages/searchPage/SearchPage';
 import RecipeBoxPage from './pages/recipeBoxPage/RecipeBoxPage';
 import Subscribe from './pages/subscribe/Subscribe';
+import Dashboard from './pages/dashboardPage/Dashboard';
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/search" element={<SearchPage />} />
           <Route path="/recipe-box" element={<RecipeBoxPage />} />
           <Route path="/subscribe" element={<Subscribe />} />
+          <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router></div>
   );
