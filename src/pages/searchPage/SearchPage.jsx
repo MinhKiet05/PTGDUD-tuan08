@@ -3,7 +3,7 @@ import { useSearchParams, useNavigate, Link } from 'react-router-dom';
 import styles from './searchPage.module.css';
 import Footer from '../../components/footer/Footer'; // Nhớ check lại đường dẫn này
 import Card from '../../components/card/Card'; // Import component Card bạn đã tạo ở bài trước
-
+import Header from '../../components/header/Header';
 // Dữ liệu giả lập cho 9 thẻ kết quả
 const mockSaladRecipes = [
   { id: 1, title: 'Cucumber salad, cherry tomatoes', time: '32 minutes',image: '/visily-image-121.webp'},
@@ -36,42 +36,7 @@ const SearchPage = () => {
 
   return (
     <div className={styles.pageWrapper}>
-      {/* HEADER */}
-      <header className={styles.header}>
-        <div className={styles.logoGroup}>
-          <span className={styles.logoIcon} onClick={() => navigate('/')} style={{cursor: 'pointer'}}>
-            Chefify
-          </span>
-        </div>
-        
-        <div className={styles.searchBar}>
-          <span className={styles.searchIcon}>🔍</span>
-          <input 
-            type="text" 
-            value={localSearch}
-            onChange={(e) => setLocalSearch(e.target.value)}
-            onKeyDown={handleSearch}
-            placeholder="Search recipes..."
-          />
-        </div>
-
-        <ul className={styles.navLinks}>
-          <li>What to cook</li>
-          <li>Recipes</li>
-          <li>Ingredients</li>
-          <li>Occasions</li>
-          <li>About Us</li>
-        </ul>
-
-        <Link to="/recipe-box" style={{ textDecoration: 'none' }}>
-          <div className={styles.headerActions}>
-            <button className={styles.recipeBoxBtn}>
-              <span className={styles.checkIcon}>☑</span> Your Recipe Box
-            </button>
-            <img src="/avatar-placeholder.png" alt="Profile" className={styles.avatar} />
-          </div>
-        </Link>
-      </header>
+      <Header></Header>
 
       {/* MAIN CONTENT */}
       <main className={styles.mainContent}>

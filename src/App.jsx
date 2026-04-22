@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/homePage/HomePage';
 import SearchPage from './pages/searchPage/SearchPage';
 import RecipeBoxPage from './pages/recipeBoxPage/RecipeBoxPage';
+import Subscribe from './pages/subscribe/Subscribe';
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/recipe-box" element={<RecipeBoxPage />} />
+          <Route path="/subscribe" element={<Subscribe />} />
       </Routes>
     </Router></div>
   );

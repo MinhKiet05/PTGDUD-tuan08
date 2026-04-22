@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './recipeBoxPage.module.css';
 import Card from '../../components/card/Card';
 import Footer from '../../components/footer/Footer';
+import Header from '../../components/header/Header';
 const mockRecipes = [
   { id: 1, title: 'Italian-style tomato salad', time: '14 minutes', image: '/visily-image-121.webp' },
   { id: 2, title: 'Vegetable and shrimp spaghetti', time: '15 minutes', image: '/visily-image-122.webp' },
@@ -16,28 +17,7 @@ const mockRecipes = [
 const RecipeBoxPage = () => {
   return (
     <div className={styles.pageWrapper}>
-      {/* HEADER (Giả lập cấu trúc tương tự trang trước) */}
-      <header className={styles.header}>
-        <div className={styles.logo}>Chefify</div>
-        <div className={styles.searchBar}>
-           <span className={styles.searchIcon}>🔍</span>
-           <input type="text" placeholder="What would you like to cook?" />
-        </div>
-        <ul className={styles.navLinks}>
-          <li>What to cook</li>
-          <li>Recipes</li>
-          <li>Ingredients</li>
-          <li>Occasions</li>
-          <li>About Us</li>
-        </ul>
-        <div className={styles.headerRight}>
-          <button className={styles.recipeBoxBtn}>
-            <span>☑</span> Your Recipe Box
-          </button>
-          <div className={styles.avatarMini}></div>
-        </div>
-      </header>
-
+      <Header/>
       {/* MAIN CONTENT */}
       <main className={styles.mainContainer}>
         {/* Breadcrumb */}

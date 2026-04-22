@@ -1,0 +1,228 @@
+.pageWrapper {
+  font-family: 'Inter', sans-serif;
+  color: #111827;
+  background-color: #fafafb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+/* HERO SECTION */
+.heroSection {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 60px;
+}
+
+.imageCol {
+  flex: 1;
+  min-width: 400px;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.subscribeDetails {
+  flex: 1;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mainTitle {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  color: #111827;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #4b5563;
+  margin-bottom: 32px;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.featureList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.4;
+}
+
+.checkIcon {
+  color: #f24e87;
+  font-weight: bold;
+}
+
+/* PRICING CARD PRIMARY */
+.pricingCardPrimary {
+  background-color: #fce7f0;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.priceHighlight {
+  font-size: 24px;
+  font-weight: 800;
+  color: #f24e87;
+  margin-bottom: 8px;
+}
+
+.priceSubtext {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 16px;
+}
+
+.subscribeBtn {
+  background-color: #f24e87;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 12px;
+}
+
+.subscribeBtn:hover {
+  background-color: #d83d71;
+}
+
+.cancelText {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ALL ACCESS SECTION */
+.allAccessSection {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: #f24e87;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.serviceItem {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.serviceName {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: #111827;
+}
+
+.serviceItem p {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* COOKING ONLY SECTION */
+.cookingOnlySection {
+  background-color: #ffffff;
+  padding: 48px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+}
+
+.cookingOnlyDesc {
+  color: #4b5563;
+  margin-bottom: 32px;
+}
+
+.cookingPricingGrid {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.pricingOption {
+  border: 1px solid #e5e7eb;
+  padding: 24px;
+  border-radius: 12px;
+  width: 250px;
+}
+
+.optionPrice {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.optionSub {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+.outlineBtn {
+  background-color: transparent;
+  color: #f24e87;
+  border: 2px solid #f24e87;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.outlineBtn:hover {
+  background-color: #fce7f0;
+}
+
+.cancelTextDark {
+  font-size: 13px;
+  color: #6b7280;
+}
