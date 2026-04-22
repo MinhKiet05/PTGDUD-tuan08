@@ -1,0 +1,71 @@
+/* Bao bọc toàn bộ section */
+.hpFeature_wrapper {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 40px;
+  font-family: 'Inter', sans-serif;
+  /* Thêm dòng này để căn giữa các phần tử con nếu cần */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Phần header chứa Title và Nút View all */
+.hpFeature_header {
+  display: flex;
+  justify-content: center; /* Căn giữa h2 theo chiều ngang */
+  margin-bottom: 12px;
+}
+.hpFeature_title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #f24e87;
+  margin: 0;
+  text-align: center; /* Căn giữa chữ bên trong thẻ h2 */
+}
+
+.hpFeature_viewAll {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f24e87; /* Màu hồng chủ đạo của Chefify */
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.hpFeature_viewAll:hover {
+  opacity: 0.8;
+}
+
+/* Phần mô tả phụ (Subtitle) */
+.hpFeature_subtitle {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0 auto 40px auto; /* auto ở trái/phải giúp thẻ p căn giữa nếu có max-width */
+  max-width: 600px;
+  line-height: 1.5;
+  text-align: center; /* Căn giữa chữ bên trong thẻ p */
+}
+
+/* Lưới hiển thị các thẻ Card (chia 4 cột) */
+.hpFeature_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Responsive cơ bản cho màn hình nhỏ hơn */
+@media (max-width: 1024px) {
+  .hpFeature_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .hpFeature_grid {
+    grid-template-columns: 1fr;
+  }
+  .hpFeature_header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
